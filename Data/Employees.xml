@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+   <employee>
+      <address>Tp Hồ Chí Minh</address>
+      <dob>2000-06-12</dob>
+      <fullName>Nam Anh</fullName>
+      <gender>true</gender>
+      <salary>15000000</salary>
+   </employee>
+   <employee>
+      <address>Cần Thơ</address>
+      <dob>2001-09-23</dob>
+      <fullName>Khánh Linh</fullName>
+      <gender>false</gender>
+      <salary>12000000</salary>
+   </employee>
+   <employee>
+      <address>Quảng Ngãi</address>
+      <dob>2005-01-15</dob>
+      <fullName>Tuấn Hùng</fullName>
+      <gender>true</gender>
+      <salary>8000000</salary>
+   </employee>
+   <employee>
+      <address>Tp Hồ Chí Minh</address>
+      <dob>1999-10-19</dob>
+      <fullName>Huỳnh Như</fullName>
+      <gender>false</gender>
+      <salary>11000000</salary>
+   </employee>
+   <employee>
+      <address>Đà Nẵng</address>
+      <dob>2002-03-26</dob>
+      <fullName>Quốc Đại</fullName>
+      <gender>true</gender>
+      <salary>19000000</salary>
+   </employee>
+</employees>
