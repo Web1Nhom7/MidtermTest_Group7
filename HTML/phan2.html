@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhân viên</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="./nhanvien.js"></script>
+    <script>
+        var app=angular.module("AngularApp",[])
+        app.controller("EmployeeController",($scope)=>{
+        $scope.employeeList= employees;
+            $scope.orderProperty="";
+            $scope.sortProperty=function(column){
+                var currentColumn=$scope.orderProperty.slice(1);
+                var currentDirection=$scope.orderProperty.slice(0,1);
+                var dir='+';
+                if (column===currentColumn){
+                    dir=currentDirection==='+'?'-':'+';
+                }
+                $scope.orderProperty=dir+column;
+            }
+        })
+    </script>
+</head>
+<body ng-app="AngularApp">
+    <div ng-controller="EmployeeController">
+        <div>
+
+        </div>
+        <table>
+            <tr>
+                <th><a ng-click="sortProperty('fullName')"></a>FullName</th>
+                <th><a ng-click="sortProperty('address')"></a>Address</th>
+                <th><a ng-click="sortProperty('dob')"></a>Date of Bird</th>
+                <th><a ng-click="sortProperty('gender')"></a>Gender</th>
+                <th><a ng-click="sortProperty('salary')"></a>Salary</th>
+            </tr>
+            <tr ng-repeat="nv in employeeList | filter: search| orderBy:orderProperty">
+                <td>{{nv.fullName}}</td>
+                <td>{{nv.address}}</td>
+                <td>{{nv.dob}}</td>
+                <td>{{nv.gender}}</td>
+                <td>{{nv.salary}}</td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>
