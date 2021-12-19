@@ -3,9 +3,9 @@ app = angular.module("AngularApp",[])
     $http({
         method:"GET",
         url:"../Data/Employees.xml"
-    }).then (function mySucces(respone){
-        $scope.employees=respone.data
-    }, function myError(respone){
-        $scope.dataError=respone.statusText
+    }).then (function mySucces(response){
+        $scope.employees=response.data
+    }, function myError(response){
+        $scope.dataError=response.statusText
     })
 })

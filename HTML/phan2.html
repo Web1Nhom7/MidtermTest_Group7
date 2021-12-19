@@ -8,9 +8,47 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="./nhanvien.js"></script>
     <script>
-        var app=angular.module("AngularApp",[])
+       let employee=[
+        {
+            "address": "Tp Hồ Chí Minh",
+                "dob": "2000-06-12",
+                "fullName": "Nam Anh",
+                "gender": true,
+                "salary": 15000000
+            },
+            {
+                "address": "Cần Thơ",
+                "dob": "2001-09-23",
+                "fullName": "Khánh Linh",
+                "gender": false,
+                "salary": 12000000
+            },
+            {
+                "address": "Quảng Ngãi",
+                "dob": "2005-01-15",
+                "fullName": "Tuấn Hùng",
+                "gender": true,
+                "salary": 8000000
+            },
+            {
+                "address": "Tp Hồ Chí Minh",
+                "dob": "1999-10-19",
+                "fullName": "Huỳnh Như",
+                "gender": false,
+                "salary": 11000000
+            },
+            {
+                "address": "Đà Nẵng",
+                "dob": "2002-03-26",
+                "fullName": "Quốc Đại",
+                "gender": true,
+                "salary": 19000000
+            
+        },];
+
+        var app=angular.module("AngularApp",[]);
         app.controller("EmployeeController",($scope)=>{
-        $scope.employeeList= employees;
+        $scope.employeeList= employee;
             $scope.orderProperty="";
             $scope.sortProperty=function(column){
                 var currentColumn=$scope.orderProperty.slice(1);
@@ -23,29 +61,55 @@
             }
         })
     </script>
-</head>
-<body ng-app="AngularApp">
-    <div ng-controller="EmployeeController">
-        <div>
+    <style>
+        table{
+    border-collapse: collapse;
 
-        </div>
-        <table>
-            <tr>
-                <th><a ng-click="sortProperty('fullName')"></a>FullName</th>
-                <th><a ng-click="sortProperty('address')"></a>Address</th>
-                <th><a ng-click="sortProperty('dob')"></a>Date of Bird</th>
-                <th><a ng-click="sortProperty('gender')"></a>Gender</th>
-                <th><a ng-click="sortProperty('salary')"></a>Salary</th>
-            </tr>
-            <tr ng-repeat="nv in employeeList | filter: search| orderBy:orderProperty">
-                <td>{{nv.fullName}}</td>
+     width: 70%;
+    
+ }
+ tr,td{
+    border: 1px solid #dddddd;
+    height: 40px;
+ }
+
+ tr:nth-child(even){
+     background-color: #ece9e9;
+ }
+ tr:first-child{
+     font-weight: bold;
+     text-align: left;
+ }
+ .display{
+    margin: 10px;
+ }
+    </style>
+</head>
+    <body ng-app="AngularApp" >
+        <div ng-controller="EmployeeController">
+            <div class="display">
+               Display: <input type="number" >
+            </div>
+            <table>
+                <tr>
+                    <th><a ng-click="sortProperty('fullName')">FullName</a></th>
+                    <th><a ng-click="sortProperty('address')">Address</th>
+                    <th><a ng-click="sortProperty('dob')"></a>Date of Bird</th>
+                    <th><a ng-click="sortProperty('gender')"></a>Gender</th>
+                    <th><a ng-click="sortProperty('salary')"></a>Salary</th>
+                </tr>
+                <tr ng-repeat="nv in employeeList | filter:search| orderBy:orderProperty ">
+                    <td>{{nv.fullName}}</td>
                 <td>{{nv.address}}</td>
                 <td>{{nv.dob}}</td>
                 <td>{{nv.gender}}</td>
                 <td>{{nv.salary}}</td>
-            </tr>
-        </table>
-    </div>
+                </tr>
+            </table>
+        </div>
+       
+    </body>
+    </html>
     
 </body>
 </html>
