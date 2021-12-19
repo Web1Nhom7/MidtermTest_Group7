@@ -10,31 +10,14 @@
     <script>
         var app = angular.module("AngularApp", [])
         app.controller("DataController", function($scope, $http) {
-            //     var trans_file = ".. / Data / Data.xml"
-            //     xmlTransform = function(data) {
-            //         var trans = new Trans();
-            //         var json = trans.xml_str2json(data);
-            //         return json.places;
-            //     };
-            //     setData = function(data) {
-
-            //         $scope.dataSet = data;
-            //     };
-            //     $http.get(trans_file, setData, xmlTransform);
-            // }).then(function mySucces(data) {
-            //     $scope.profiles = data.data
-            // }, function myError(data) {
-            //     $scope.dataError = data.statusText
-            // })
-            $http.get("Data.xml", {
-                transformResponse: function(data) {
-                    var trans = new Trans();
-                    var json = trans.xml_str2json(data);
-
-                }
-            }).success(function(respone) {
-                $scope.details = respone.data;
-            });
+            $http({
+                method: "GET",
+                url: "../Data/Data.json"
+            }).then(function mySucces(respone) {
+                $scope.details = respone.data
+            }, function myError(respone) {
+                $scope.dataError = respone.statusText
+            })
         })
     </script>
 </head>
@@ -43,15 +26,16 @@
 
     <div class="container" ng-repeat="det in details">
         <div class="header">
-            <span>{{det.hinh}}</span>
-            <p style="color: darkred;">Danh sách địa điểm</p>
+            <span>{{det.place[0].hinh}}</span>
+            <p style="color: darkred;">Danh sách địa điểm <span>{{det.place[0].ten}}</span></p>
         </div>
         <div class="body" style="color: white; background-color: darkred;">
-            <strong>Miền Bắc</strong> <br>
-            <span>{{det.hinh}}</span> <br>
             <strong>Miền Nam</strong> <br>
-            <span></span>
-
+            <span>{{det.place[0].mien[0].nam[0].address}}</span> <br>
+            <strong>Miền Bắc</strong> <br>
+            <span>{{det.place[1].mien[1].bac[0].address}}</span> <br>
+            <strong>Miền Trung</strong> <br>
+            <span>{{det.place[2].mien[2].trung[0].address}}</span>
 
 
         </div>
