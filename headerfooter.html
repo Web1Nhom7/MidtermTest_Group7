@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    html,body{
+        margin: 0;
+        padding: 0;
+        font-size: 1.3vw;
+    }
+    .header{
+        overflow: hidden;
+        background-color: #BF152F;
+        font-size: 1rem;
+        position: fixed;
+        top:0;
+        width: 100%;
+        
+    }
+    .header a{
+        text-decoration: none;
+        
+        color: white;
+        padding: 0.5rem;
+        text-align: center;
+    }
+    .header-left{
+        float: left;
+        display: block;  
+    }
+    .header-right{
+        float: right;
+        display: block;
+    }
+    .header a:hover{
+        background-color: #7c0d1e;
+    }
+    .header .icon{
+        display: none;
+    }
+    @media screen and (max-width: 600px){
+        .header{
+            font-size: 2rem;
+        }
+        .header a:not(:first-child){
+            display: none;
+        }
+        .header a.icon{
+            float: right;
+            display: block;
+        }
+    }
+        @media screen and (max-width: 600px){
+        .header.responsive {
+            position: relative;
+        }
+        .header.responsive .icon{
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .header.responsive a{
+            float: none;
+            display: block;
+            text-align: left;
+           background-color: #B18189;
+        }
+        .header.responsive a:first-child,.header.responsive .icon{
+            background-color: #7c0d1e;
+        }
+        
+    }
+    /* Footer */
+    .footer{
+        background-color: #DDDDDD;
+        text-align: center;
+        font-size: 1.1rem;
+        padding: 0.2rem;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    @media screen and (max-width: 600px){
+        .footer{
+        font-size: 2.5rem;
+    }
+    }
+</style>
+</head>
+<body>
+    <div class="header" id="header-nav">
+        <a class="header-left" href="#">GIỚI THIỆU</a>
+        <a class="header-right" href="#">TẢI ỨNG DỤNG</a>
+        <a class="header-right" href="#">LỢI ÍCH</a>
+        <a class="header-right" href="#">ĐỊA ĐIỂM HOÀN TIỀN</a>
+        <a href="javascript:void(0);" class="icon" onclick="myHeader()">
+            <i class="fa fa-bars"></i>
+          </a>
+        
+    </div>
+    <script>
+        function myHeader() {
+          var nav = document.getElementById("header-nav");
+          if (nav.className === "header") {
+            nav.className += " responsive";
+          } else {
+            nav.className = "header";
+          }
+        }
+        </script>
+        
+    <div class="footer">&copy; 2020 - Công ty cổ phần Gigatum Việt Nam </div>
+</body>
+</html>
