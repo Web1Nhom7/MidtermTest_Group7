@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Body</title>
     <style>
-        html,body{
+        /* html,body{
         font-size: 1.3vw;
-    }
+    } */
         .list-container{
-            display: flex;
-            flex-grow: 4;
+           display: flex;
             flex-wrap: wrap;
+            justify-content: space-evenly;
         }
         .container__item{
-            flex-basis: 25%;
+            /* flex-basis: 25%; */
             margin: 1rem;
             text-align: center;
-            
+            /* flex-grow: 4; */
+            min-width: 250px;
         }
         img{
-            width: 10rem;
-            height: 4rem;
+            width: 200px;
+            /* height: 4rem; */
             border: 1px solid red;
             padding: 1rem;
         }
@@ -31,6 +32,11 @@
         }
         .discount{
             color: tomato;
+        }
+        @media screen and (max-width:500px) {
+            img{
+                width: 70%;
+            }
         }
     </style>
 </head>
@@ -42,7 +48,25 @@
             <div>7 địa điểm</div>
             <div class="text-bold discount">Hoàn tiền 15%</div>
         </div>
-        <div class="list-container">
+            <div class="container__item">
+                <img src="./Images/ElGaucho.png" >
+                <div class="text-bold">El Gaucho</div>
+                <div>7 địa điểm</div>
+                <div class="text-bold discount">Hoàn tiền 15%</div>
+            </div>
+            <div class="container__item">
+                <img src="./Images/ElGaucho.png" >
+                <div class="text-bold">El Gaucho</div>
+                <div>7 địa điểm</div>
+                <div class="text-bold discount">Hoàn tiền 15%</div>
+            </div>
+            <div class="container__item">
+                <img src="./Images/ElGaucho.png" >
+                <div class="text-bold">El Gaucho</div>
+                <div>7 địa điểm</div>
+                <div class="text-bold discount">Hoàn tiền 15%</div>
+            </div>
+        <!-- <div class="list-container">
             <div class="container__item">
                 <img src="./Images/ElGaucho.png" >
                 <div class="text-bold">El Gaucho</div>
@@ -65,31 +89,7 @@
                 <div>7 địa điểm</div>
                 <div class="text-bold discount">Hoàn tiền 15%</div>
             </div>
-        </div>
-        <div class="list-container">
-            <div class="container__item">
-                <img src="./Images/ElGaucho.png" >
-                <div class="text-bold">El Gaucho</div>
-                <div>7 địa điểm</div>
-                <div class="text-bold discount">Hoàn tiền 15%</div>
-            </div>
-        </div>
-        <div class="list-container">
-            <div class="container__item">
-                <img src="./Images/ElGaucho.png" >
-                <div class="text-bold">El Gaucho</div>
-                <div>7 địa điểm</div>
-                <div class="text-bold discount">Hoàn tiền 15%</div>
-            </div>
-        </div>
-        <div class="list-container">
-            <div class="container__item">
-                <img src="./Images/ElGaucho.png" >
-                <div class="text-bold">El Gaucho</div>
-                <div>7 địa điểm</div>
-                <div class="text-bold discount">Hoàn tiền 15%</div>
-            </div>
-        </div>
+        </div> -->
     </div>
     
 
