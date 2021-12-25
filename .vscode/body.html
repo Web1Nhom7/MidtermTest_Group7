@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./Js/angular.min.js"></script>
+    <script src="./Data/Data.json"></script>
+    <style>
+        html,
+        body {
+            font-size: 1.3vw;
+        }
+        
+        .list-container {
+            display: flex;
+            flex-grow: 4;
+            flex-wrap: wrap;
+        }
+        
+        .container__item {
+            flex-basis: 25%;
+            margin: 1rem;
+            text-align: center;
+        }
+        
+        img {
+            width: 10rem;
+            height: 4rem;
+            border: 1px solid red;
+            padding: 1rem;
+        }
+        
+        .text-bold {
+            font-weight: bold;
+        }
+        
+        .discount {
+            color: tomato;
+        }
+    </style>
+    <script>
+        var app = angular.module("AngularApp", [])
+        app.controller("DataController", function($scope, $http) {
+            $http({
+                method: "GET",
+                url: "../Data/Data.json"
+            }).then(function mySucces(respone) {
+                $scope.details = respone.data
+            }, function myError(respone) {
+                $scope.dataError = respone.statusText
+            })
+        })
+    </script>
+</head>
+
+<body ng-app="AngularApp" ng-controller="DataController">
+    <div class="list-container">
+        <div class="container__item">
+            <img data-ng-src="{{det.place[0].hinh}}">
+            <div class="text-bold">{{det.place[0].ten}}</div>
+            <div>7 địa điểm</div>
+            <div class="text-bold discount">Hoàn tiền {{det.place[0].hoanTien}}</div>
+        </div>
+        <div class="list-container">
+            <div class="container__item">
+                <img data-ng-src="{{det.place[0].hinh}}">
+                <div class="text-bold">{{det.place[0].ten}}</div>
+                <div>7 địa điểm</div>
+                <div class="text-bold discount">Hoàn tiền {{det.place[0].hoanTien}}</div>
+            </div>
+        </div>
+        <div class="list-container">
+            <div class="container__item">
+                <img src="./Images/ElGaucho.png">
+                <div class="text-bold">El Gaucho</div>
+                <div>7 địa điểm</div>
+                <div class="text-bold discount">Hoàn tiền {{det.place[0].hoanTien}}</div>
+            </div>
+        </div>
+        <div class="list-container">
+            <div class="container__item">
+                <img src="./Images/ElGaucho.png">
+                <div class="text-bold">{{det.place[0].hoanTien}}</div>
+                <div>7 địa điểm</div>
+                <div class="text-bold discount">Hoàn tiền {{det.place[0].hoanTien}}</div>
+            </div>
+        </div>
+        <div class="list-container">
+            <div class="container__item">
+                <img src="./Images/ElGaucho.png">
+                <div class="text-bold">El Gaucho</div>
+                <div>7 địa điểm</div>
+                <div class="text-bold discount">Hoàn tiền {{det.place[0].hoanTien}}</div>
+            </div>
+        </div>
+        <div class="list-container">
+            <div class="container__item">
+                <img src="./Images/ElGaucho.png">
+                <div class="text-bold">El Gaucho</div>
+                <div>7 địa điểm</div>
+                <div class="text-bold discount">Hoàn tiền {{det.place[0].hoanTien}}</div>
+            </div>
+        </div>
+        <div class="list-container">
+            <div class="container__item">
+                <img src="./Images/ElGaucho.png">
+                <div class="text-bold">El Gaucho</div>
+                <div>7 địa điểm</div>
+                <div class="text-bold discount">Hoàn tiền {{det.place[0].hoanTien}}</div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
