@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">  
+
+    <style>
+        /* html,body{
+        font-size: 1.3vw;
+    } */
+        .list-container{
+           display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        .container__item{
+            /* flex-basis: 25%; */
+            margin: 1rem;
+            text-align: center;
+            /* flex-grow: 4; */
+            min-width: 250px;
+        }
+        img{
+            width: 200px;
+            /* height: 4rem; */
+            border: 1px solid red;
+            padding: 1rem;
+        }
+        .text-bold{
+            font-weight: bold;
+        }
+        .discount{
+            color: tomato;
+        }
+        @media screen and (max-width:500px) {
+            img{
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="list-container">
+        <div class="container__item">
+            <img src="./Images/ElGaucho.png" class=" show-modal" data-toggle="modal" data-target="#myLogin" >
+            <div class="text-bold">El Gaucho</div>
+            <div>7 địa điểm</div>
+            <div class="text-bold discount">Hoàn tiền 15%</div>
+        </div>
+            <div class="container__item">
+                <img src="./Images/ElGaucho.png" class=" show-modal" data-toggle="modal" data-target="#myLogin">
+                <div class="text-bold">El Gaucho</div>
+                <div>7 địa điểm</div>
+                <div class="text-bold discount">Hoàn tiền 15%</div>
+            </div>
+            <div class="container__item">
+                <img src="./Images/ElGaucho.png" class=" show-modal" data-toggle="modal" data-target="#myLogin">
+                <div class="text-bold">El Gaucho</div>
+                <div>7 địa điểm</div>
+                <div class="text-bold discount">Hoàn tiền 15%</div>
+            </div>
+            <div class="container__item">
+                <img src="./Images/ElGaucho.png" class=" show-modal" data-toggle="modal" data-target="#myLogin">
+                <div class="text-bold">El Gaucho</div>
+                <div>7 địa điểm</div>
+                <div class="text-bold discount">Hoàn tiền 15%</div>
+            </div>
+       
+    <div class="modal fade" id="myLogin" tabindex="-1" role="dialog" aria-labelledby="myLoginLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content clearfix">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <div class="modal-body">
+                    <div class="container" ng-repeat="det in details">
+                        <div class="header">
+                            <img style="width:10%" data-ng-src="{{det.place[0].hinh}}">
+                            <p style="color: darkred;">Danh sách địa điểm <span>{{det.place[0].ten}}</span></p>
+                        </div>
+                        <div class="body" style="color: white; background-color: darkred;">
+                            <strong>Miền Nam</strong> <br>
+                            <span>{{det.place[0].mien[0].nam[0].address}}</span> <br>
+                            <strong>Miền Bắc</strong> <br>
+                            <span>{{det.place[1].mien[1].bac[0].address}}</span> <br>
+                            <strong>Miền Trung</strong> <br>
+                            <span>{{det.place[2].mien[2].trung[0].address}}</span>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+
+</body>
+</html>
